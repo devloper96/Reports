@@ -46,15 +46,7 @@ def upload_file():
                 pass
             #file.save(os.path.join(app.config['UPLOAD_FOLDER'], Randomfilename + '.' + fileextension))
             return 'manthan.blob.core.windows.net/reports/' + filename
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form action="" method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-    '''
+    return render_template('index.html')
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
